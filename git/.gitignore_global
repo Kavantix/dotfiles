@@ -1,0 +1,9 @@
+*~
+.DS_Store
+.idea
+IngenicoConnectTestApp.xcscmblueprint
+*.xcscmblueprint
+ios/build
+.medapp.droidres.db
+.medapp.droidres.db-journal
+compiled.js

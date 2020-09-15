@@ -1,0 +1,10 @@
+{
+		  "codeLens.separator": "‣",
+		  "codeLens.enable": true,
+		  "diagnostic.virtualText": true,
+		  "diagnostic.virtualTextPrefix": "!!! ",
+		  "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
+		  "vetur.useWorkspaceDependencies": true,
+		  "flutter.workspaceFolder.ignore": ["~/.pub-cache"],
+		  "list.source.diagnostics.defaultOptions": ["--strict", "--input"],
+}
