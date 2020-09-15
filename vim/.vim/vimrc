@@ -49,6 +49,7 @@ let NERDTreeShowHidden=1
 let g:airline_theme='term'
 
 " Latex config
+let g:tex_flavor='latex'
 let g:vimtex_compiler_progname = 'nvr'
 " let g:vimtex_view_general_viewer = 'open -a /Applications/Skim.app'
 " let g:vimtex_view_skim_activate = 1
@@ -89,7 +90,8 @@ let mapleader = ','
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
-let $FZF_DEFAULT_COMMAND='fd --type f -H --exclude .git'
+let g:fzf_default_command='fd --type f -H --exclude .git --exclude "*.png" --exclude "*.ttf"'
+let $FZF_DEFAULT_COMMAND=g:fzf_default_command
 
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>m :NERDTreeFind<cr>

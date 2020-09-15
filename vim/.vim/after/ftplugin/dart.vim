@@ -18,3 +18,4 @@ nnoremap <buffer> <silent> <leader>fwb :call <SID>RunCodeAction('Wrap with Strea
 nnoremap <buffer> <silent> <leader>fmd :call <SID>RunCodeAction('Move widget down')<cr>
 nnoremap <buffer> <silent> <leader>fmu :call <SID>RunCodeAction('Move widget up')<cr>
 
+let $FZF_DEFAULT_COMMAND=g:fzf_default_command . ' --exclude "**/*.g.dart" --exclude "**/*.chopper.dart" --exclude "android/**/*" --exclude "ios/**/*"'
