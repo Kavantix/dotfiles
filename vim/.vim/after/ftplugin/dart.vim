@@ -20,8 +20,12 @@ nnoremap <buffer> <silent> <leader>fmu :call <SID>RunCodeAction('Move widget up'
 
 let $FZF_DEFAULT_COMMAND=g:fzf_default_command . ' --exclude "**/*.g.dart" --exclude "**/*.chopper.dart" --exclude "android/**/*" --exclude "ios/**/*"'
 
-let g:dart_format_on_save = 1
+if (!exists("g:dart_format_on_save"))
+  let g:dart_format_on_save = 1
+endif
 let g:dart_style_guide = 2
 let g:lsc_server_commands = {'dart': 'dart_language_server'}
 let g:lsc_auto_map = v:true
-let g:dartfmt_options = ['--fix', '-l 100']
+if (!exists("g:dartfmt_options"))
+  let g:dartfmt_options = ['--fix', '-l 100']
+endif

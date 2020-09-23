@@ -91,6 +91,19 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 
 nnoremap <silent> <leader>p :call CocActionAsync('showSignatureHelp')<cr>
 
+augroup coc_group
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  " autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+function! ShowSignature()
+    call CocActionAsync('showSignatureHelp')
+	 return ""
+endfunction
+" inoremap <silent> <expr> <C-,><C-p> ShowSignature()
+
 " set error/warning highlight colors
 highlight CocErrorHighlight ctermbg=124  guibg=#af0000
 highlight CocWarningHighlight ctermbg=100  guibg=#878700
