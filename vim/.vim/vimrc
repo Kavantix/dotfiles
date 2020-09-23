@@ -12,6 +12,9 @@ set splitbelow splitright
 set ignorecase
 set smartcase
 
+" Always expand tabs to spaces!
+set expandtab
+
 " no more swp files!
 set noswapfile
 set nobackup
