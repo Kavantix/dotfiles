@@ -1,10 +1,12 @@
 {
   "dependencies": {
+    "coc-clangd": ">=0.4.14",
     "coc-docker": ">=0.3.0",
     "coc-flutter": ">=1.5.1",
     "coc-git": ">=2.0.0",
     "coc-json": ">=1.2.6",
     "coc-pairs": ">=1.2.21",
+    "coc-phpls": ">=2.1.10",
     "coc-python": ">=1.2.12",
     "coc-snippets": ">=2.2.0",
     "coc-tsserver": ">=1.5.6",
