@@ -2,10 +2,8 @@ let mapleader = ','
 
 syntax on
 set nocompatible
-set tabstop=3
 set number
 set relativenumber
-set autoindent
 set wildmenu
 set hidden
 set splitbelow splitright
@@ -14,6 +12,12 @@ set smartcase
 
 " Always expand tabs to spaces!
 set expandtab
+set shiftwidth=2
+set tabstop=2
+set smarttab
+set autoindent
+set list
+
 
 " no more swp files!
 set noswapfile
@@ -25,12 +29,14 @@ set undofile
 set exrc
 " Refresh buffer
 set autoread
+set colorcolumn=81
+
 
 
 call plug#begin()
 
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/jsonc.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -47,9 +53,41 @@ Plug 'crusoexia/vim-monokai'
 Plug 'lervag/vimtex'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'posva/vim-vue'
-Plug 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
+Plug 'junegunn/rainbow_parentheses.vim'
+" Text Navigation
+Plug 'unblevable/quick-scope'
+" Colorizer
+Plug 'norcalli/nvim-colorizer.lua'
+
+Plug 'uarun/vim-protobuf'
+
+" Python
+Plug 'vim-scripts/indentpython.vim'
+Plug 'vim-python/python-syntax'
+
+Plug 'vim-pandoc/vim-pandoc-syntax'
+
+" Showing mapped leader commands
+Plug 'spinks/vim-leader-guide'
+
+" telescope requirements...
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
 
 call plug#end()
+
+" uncomment to work with local coc instance
+set runtimepath^=$HOME/Git/coc.nvim
+
+source $HOME/.config/nvim/plug/coc-settings.vim
+source $HOME/.config/nvim/plug/remappings.vim
+" luafile $HOME/.config/nvim/lua/kavantix/init.lua
+" luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+" luafile $HOME/.config/nvim/lua/telescope.lua
 
 let NERDTreeShowHidden=1
 
@@ -80,3 +118,70 @@ set mouse=a
 " Always keep 10 lines below/above cursor
 set scrolloff=10
 
+" -------------- Rainbow --------------------------
+
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+let g:rainbow#max_level = 32
+
+let g:rainbow_conf = {'guis': ['bold']}
+
+" \	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+" let g:rainbow_conf = {
+" \	'guifgs': ['#858580', '#8FBCBB', '#D08770', '#A3BE8C', '#EBCB8B', '#B48EAD', '#80a880', '#887070'],
+" \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+" \	'guis': [''],
+" \	'cterms': [''],
+" \	'operators': '_,_',
+" \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+" \	'separately': {
+" \		'*': {},
+" \		'markdown': {
+" \			'parentheses_options': 'containedin=markdownCode contained', 
+" \		},
+" \		'lisp': {
+" \	    'guifgs': ['#858580', '#8FBCBB', '#D08770', '#A3BE8C', '#EBCB8B', '#B48EAD', '#80a880', '#887070'],
+" \		},
+" \		'jsx': {
+" \	    'guifgs': ['#858580', '#8FBCBB', '#D08770', '#A3BE8C', '#EBCB8B', '#B48EAD', '#80a880', '#887070'],
+" \		},
+" \		'haskell': {
+" \			'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
+" \		},
+" \		'vim': {
+" \			'parentheses_options': 'containedin=vimFuncBody', 
+" \		},
+" \		'perl': {
+" \			'syn_name_prefix': 'perlBlockFoldRainbow', 
+" \		},
+" \		'stylus': {
+" \			'parentheses': ['start=/{/ end=/}/ fold contains=@colorableGroup'], 
+" \		},
+" \		'css': 0, 
+" \	}
+" \}
+
+" let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme,dart,js,json,typescript,go RainbowParentheses
+augroup END
+
+
+" ---------- QuickScope --------------------------
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+highlight QuickScopePrimary guifg='#00C7DF' gui=underline ctermfg=155 cterm=underline
+highlight QuickScopeSecondary guifg='#eF5F70' gui=underline ctermfg=81 cterm=underline
+let g:qs_max_chars=150
+
+" Python
+let python_highlight_all=1
+
+
+" Set pandoc for markdown files
+augroup pandoc_syntax
+    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+augroup END
+hi Conceal guifg=orange guibg=None

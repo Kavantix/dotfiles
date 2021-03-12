@@ -51,11 +51,11 @@ function! s:check_back_space() abort
 endfunction
 
 " Give more space for displaying messages.
-set cmdheight=2
+" set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=10
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -105,16 +105,19 @@ endfunction
 " inoremap <silent> <expr> <C-,><C-p> ShowSignature()
 
 " set error/warning highlight colors
-highlight CocErrorHighlight ctermbg=124  guibg=#af0000
-highlight CocWarningHighlight ctermbg=100  guibg=#878700
 set termguicolors
 
 " ---------------------------------------------------------------------
 
 
-let g:current_function = ''
-autocmd CursorHold * silent let g:current_function = CocAction('getCurrentFunctionSymbol')
-let g:airline_section_y = '%{g:current_function}'
+" let g:current_function = ''
+" autocmd CursorHold * silent let g:current_function = CocAction('getCurrentFunctionSymbol')
+" let g:airline_section_y = '%{g:current_function}'
+let g:airline_section_y = '%{coc#status()}'
 
 
 " let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
+
+let g:coc_snippet_next='<TAB>'
+let g:coc_snippet_prev='<S-TAB>'
+
