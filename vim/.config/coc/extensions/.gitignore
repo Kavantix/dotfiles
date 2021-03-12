@@ -3,3 +3,4 @@ db.json
 coc-go-data
 coc-clangd-data
 coc-phpls-data
+coc-lua-data
