@@ -5,12 +5,10 @@
   "diagnostic.virtualTextPrefix": "!!! ",
   "vetur.useWorkspaceDependencies": true,
   "flutter.workspaceFolder.ignore": [
-    "~/.pub-cache"
+    "~/.pub-cache",
+    "~/fvm/versions/stable/packages/flutter/"
   ],
-  "list.source.diagnostics.defaultOptions": [
-    "--strict",
-    "--input"
-  ],
+  "list.source.diagnostics.defaultOptions": ["--strict", "--input"],
   "clangd.path": "/Users/pieter/Git/dotfiles/vim/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
   "suggest.timeout": 15000,
   "suggest.maxCompleteItemCount": 100,
@@ -26,9 +24,7 @@
     "yaml"
   ],
   "python.formatting.provider": "yapf",
-  "flutter.sdk.searchPaths": [
-    "~/Git/flutter",
-  ],
+  "flutter.sdk.searchPaths": ["~/Git/flutter"],
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
   "flutter.autoOpenDevLog": true,
@@ -39,5 +35,7 @@
   "Lua.workspace.maxPreload": 10000,
   "Lua.workspace.preloadFileSize": 1000,
   "flutter.selectedDeviceId": "1D558E73-103B-4B1B-ACBC-D254F8AF5FC2",
-  "flutter.trace.server": "verbose",
+  "flutter.trace.server": "message",
+  "flutter.outlineWidth": 60
+  /* "flutter.useNerdFont": false */
 }
