@@ -27,8 +27,14 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup holdgroup
+  autocmd!
+  " Highlight the symbol and its references when holding the cursor.
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+  " autocmd CursorHold * echo "cursor hold"
+  " autocmd CursorMoved * silent call CocActionAsync('highlight')
+  " autocmd CursorMoved * echo "cursor mode"
+augroup END
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -55,7 +61,7 @@ endfunction
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=10
+set updatetime=1000
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
