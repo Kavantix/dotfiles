@@ -32,11 +32,15 @@ set autoread
 set colorcolumn=81
 
 
+let s:local_coc_path = "$HOME/Git/coc.nvim"
+let s:has_local_coc = isdirectory(s:local_coc_path)
 
 call plug#begin()
 
 Plug 'dart-lang/dart-vim-plugin'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+if !s:has_local_coc
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 Plug 'neoclide/jsonc.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -80,8 +84,9 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 call plug#end()
 
-" uncomment to work with local coc instance
-set runtimepath^=$HOME/Git/coc.nvim
+if s:has_local_coc
+  set runtimepath^=$HOME/Git/coc.nvim
+endif
 
 source $HOME/.config/nvim/plug/coc-settings.vim
 source $HOME/.config/nvim/plug/remappings.vim
