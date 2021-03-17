@@ -22,7 +22,8 @@ nnoremap <leader>O :Commands<cr>
 nnoremap <leader>l :Lines<cr>
 
 " User vim-commentary to comment out lines of code
-nnoremap <leader>/ :Commentary<cr>
+nnoremap <silent> <leader>/ :Commentary<cr>
+vnoremap <silent> <leader>/ :Commentary<cr>
 
 " Easier saving, quitting, reloading and resourcing
 nnoremap <silent> <leader>s :update<cr>
