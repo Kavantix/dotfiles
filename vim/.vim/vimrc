@@ -33,6 +33,8 @@ set exrc
 set autoread
 set colorcolumn=81
 
+" Make macros lighting fast
+set lazyredraw
 
 let s:local_coc_path = "$HOME/Git/coc.nvim"
 let s:has_local_coc = isdirectory(s:local_coc_path)
