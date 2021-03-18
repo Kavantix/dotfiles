@@ -1,1 +1,3 @@
-lua require('kavantix')
+if has('nvim')
+  lua require('kavantix')
+endif

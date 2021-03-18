@@ -67,8 +67,6 @@ Plug 'posva/vim-vue'
 Plug 'junegunn/rainbow_parentheses.vim'
 " Text Navigation
 Plug 'unblevable/quick-scope'
-" Colorizer
-Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'uarun/vim-protobuf'
 
@@ -81,11 +79,16 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 " Showing mapped leader commands
 Plug 'spinks/vim-leader-guide'
 
-" telescope requirements...
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
+if has('nvim')
+  " telescope requirements...
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-fzy-native.nvim'
+  " Colorizer
+  Plug 'norcalli/nvim-colorizer.lua'
+
+endif
 
 " Better cursorhold event that doesnt write swap and works in nvim
 Plug 'antoinemadec/FixCursorHold.nvim'
