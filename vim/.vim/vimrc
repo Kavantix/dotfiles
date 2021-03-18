@@ -81,8 +81,13 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
+" Better cursorhold event that doesnt write swap and works in nvim
+Plug 'antoinemadec/FixCursorHold.nvim'
 
 call plug#end()
+
+" in millisecond, used for both CursorHold and CursorHoldI
+let g:cursorhold_updatetime = 100
 
 if s:has_local_coc
   set runtimepath^=$HOME/Git/coc.nvim
