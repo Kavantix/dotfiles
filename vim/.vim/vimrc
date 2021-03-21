@@ -37,7 +37,7 @@ set colorcolumn=81
 set lazyredraw
 
 let s:local_coc_path = "$HOME/Git/coc.nvim"
-let s:has_local_coc = isdirectory(s:local_coc_path)
+let s:has_local_coc = isdirectory(expand(s:local_coc_path))
 
 call plug#begin()
 
