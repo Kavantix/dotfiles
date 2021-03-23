@@ -99,6 +99,9 @@ call plug#end()
 " in millisecond, used for both CursorHold and CursorHoldI
 let g:cursorhold_updatetime = 100
 
+" disable jumping to pair bracket if it is on another line
+let g:AutoPairsMultilineClose = 0
+
 if s:has_local_coc
   set runtimepath^=$HOME/Git/coc.nvim
 endif
