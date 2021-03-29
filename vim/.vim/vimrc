@@ -94,6 +94,8 @@ endif
 Plug 'antoinemadec/FixCursorHold.nvim'
 
 Plug 'jiangmiao/auto-pairs'
+
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 " in millisecond, used for both CursorHold and CursorHoldI
