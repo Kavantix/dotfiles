@@ -121,6 +121,9 @@ let g:airline_theme='term'
 let g:airline#extensions#whitespace#enabled = 0
 " Only show parts of the Z section
 let g:airline_section_z = '%#__accent_bold#%l%#__restore__#%#__accent_bold#/%L%#__restore__#:%v'
+" Prevent airline getting slower over time while using coc
+" Since coc puts in dynaimc highlighting groups which can slow it down
+let g:airline_highlighting_cache = 1
 
 " Latex config
 let g:tex_flavor='latex'
