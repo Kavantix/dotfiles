@@ -75,6 +75,6 @@ nnoremap <silent> <leader>br :checktime<cr>
 
 nnoremap <silent> <leader>tg :FloatermNew --autoclose=2 --width=0.9 --height=0.9 lazygit<cr>
 nnoremap <silent> <leader>tt :FloatermToggle<cr>
-nnoremap <silent> <leader>tn :FloatermNew --autoclose=2<cr>
+nnoremap <silent> <leader>tn :FloatermNew --autoclose=2 --width=0.9 --height=0.9<cr>
 nnoremap <silent> <C-T> :FloatermToggle<cr>
 tnoremap <silent> <C-T> <C-\><C-N>:FloatermToggle<cr>

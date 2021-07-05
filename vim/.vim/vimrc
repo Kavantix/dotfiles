@@ -116,7 +116,8 @@ source $HOME/.config/nvim/plug/remappings.vim
 
 let NERDTreeShowHidden=1
 
-let g:airline_theme='term'
+let g:airline_extensions=[]
+let g:airline_theme='dark_minimal'
 " Disable whitespace showing at the right of the statusbar
 let g:airline#extensions#whitespace#enabled = 0
 " Only show parts of the Z section
