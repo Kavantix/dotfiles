@@ -4,6 +4,7 @@
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextPrefix": "!!! ",
   "vetur.useWorkspaceDependencies": true,
+  "coc.preferences.semanticTokensHighlights": false,
   "flutter.workspaceFolder.ignore": [
     "~/.pub-cache",
     "~/fvm/versions/stable/packages/flutter"
@@ -46,6 +47,6 @@
   /* "flutter.useNerdFont": false */
   "dart.analysisExcludedFolders": [
     "/Users/pieter/.pub-cache",
-    "/Users/pieter/fvm/versions/stable/packages/flutter"
+    "/Users/pieter/fvm/versions/stable/"
   ]
 }

@@ -115,7 +115,7 @@ set termguicolors
 " let g:current_function = ''
 " autocmd CursorHold * silent let g:current_function = CocAction('getCurrentFunctionSymbol')
 " let g:airline_section_y = '%{g:current_function}'
-let g:airline_section_y = '%{coc#status()}'
+" let g:airline_section_y = '%{coc#status()}'
 " set statusline+=%{coc#status()}
 
 

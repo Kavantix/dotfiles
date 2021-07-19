@@ -1,6 +1,11 @@
 runtime! plugin/sensible.vim
 
-let mapleader = ','
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 syntax on
 set nocompatible
@@ -44,6 +49,8 @@ call plug#begin()
 " start with some sensible defaults
 Plug 'tpope/vim-sensible'
 
+Plug 'neovimhaskell/haskell-vim'
+
 Plug 'dart-lang/dart-vim-plugin'
 if !s:has_local_coc
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -51,14 +58,15 @@ endif
 Plug 'neoclide/jsonc.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'zchee/vim-flatbuffers'
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 Plug 'crusoexia/vim-monokai'
 Plug 'lervag/vimtex'
 Plug 'editorconfig/editorconfig-vim'
@@ -135,6 +143,18 @@ let g:vimtex_view_method = 'skim'
 
 " Disable auto folding of markdown
 let g:vim_markdown_folding_disabled = 1
+
+let g:lightline = {
+      \ 'colorscheme': 'deus',
+      \ 'active': {
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'cocstatus', 'filetype' ] ]
+      \ },
+      \ 'component': {
+      \   'cocstatus': '%{coc#status()}'
+      \ },
+      \ }
 
 
 colorscheme monokai
