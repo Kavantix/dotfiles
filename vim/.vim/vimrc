@@ -144,12 +144,20 @@ let g:vimtex_view_method = 'skim'
 " Disable auto folding of markdown
 let g:vim_markdown_folding_disabled = 1
 
+set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'deus',
       \ 'active': {
+      \ 'left': [ [ 'mode', 'paste' ],
+      \           [ 'readonly', 'relativepath', 'modified' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'cocstatus', 'filetype' ] ]
+      \ },
+      \ 'inactive': {
+      \ 'left': [ [ 'relativepath' ] ],
+      \ 'right': [ [ 'lineinfo' ],
+      \            [ 'percent' ] ]
       \ },
       \ 'component': {
       \   'cocstatus': '%{coc#status()}'
