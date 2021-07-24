@@ -7,3 +7,14 @@ test -f /Users/pieter/.ghcup/env ; and set -gx PATH $HOME/.cabal/bin /Users/piet
 # NeoVim as manpager
 set -x MANPAGER "nvim -c 'set ft=man' -"
 set -x EDITOR "nvim"
+
+#aliases
+alias uja="cd ~/git/uj_apps"
+alias ujav="cd ~/git/uj_apps; and nvim"
+alias ujb="cd ~/git/uj-api-backend-frontend"
+alias ujbv="cd ~/git/uj-api-backend-frontend; and nvim"
+alias dotfiles="cd ~/git/dotfiles"
+alias dotfilesv="cd ~/git/dotfiles; and nvim"
+alias lg="lazygit"
+alias spotlighton="sudo mdutil -a -i on"
+alias spotlightoff="sudo mdutil -a -i off"
