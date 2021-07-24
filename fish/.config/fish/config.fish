@@ -6,3 +6,4 @@ test -f /Users/pieter/.ghcup/env ; and set -gx PATH $HOME/.cabal/bin /Users/piet
 
 # NeoVim as manpager
 set -x MANPAGER "nvim -c 'set ft=man' -"
+set -x EDITOR "nvim"
