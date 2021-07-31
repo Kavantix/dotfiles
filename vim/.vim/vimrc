@@ -61,6 +61,7 @@ Plug 'junegunn/fzf.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -145,6 +146,9 @@ let g:vimtex_view_method = 'skim'
 let g:vim_markdown_folding_disabled = 1
 
 set noshowmode
+" Always show tabline
+set showtabline=2
+let g:lightline#bufferline#clickable = 1
 let g:lightline = {
       \ 'colorscheme': 'deus',
       \ 'active': {
@@ -159,8 +163,20 @@ let g:lightline = {
       \ 'right': [ [ 'lineinfo' ],
       \            [ 'percent' ] ]
       \ },
+      \ 'tabline': {
+      \ 'left': [ [ 'buffers' ] ],
+      \ },
       \ 'component': {
       \   'cocstatus': '%{coc#status()}'
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
+      \ },
+      \ 'component_raw': {
+      \   'buffers': 1
       \ },
       \ }
 

@@ -34,6 +34,11 @@ nnoremap <silent> <leader>rr :e<cr>
 nnoremap <silent> <leader>rs :source %<cr>
 nnoremap <silent> <leader>rv :source $MYVIMRC<cr>
 
+" Move between buffers
+" nnoremap <S-l> :bn<cr>
+nnoremap <silent> <S-h> :<C-u>exe 'bp' . v:count1<cr>
+nnoremap <silent> <S-l> :<C-u>exe 'bn' . v:count1<cr>
+
 " quickfix list movement
 nnoremap <C-l> :cnext<cr>
 nnoremap <C-h> :cprevious<cr>
