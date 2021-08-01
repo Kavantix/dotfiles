@@ -7,6 +7,24 @@ tnoremap <C-H> <C-\><C-N><C-W>h
 " noremap <C-L> <C-W>l
 tnoremap <C-L> <C-\><C-N><C-W>l
 
+" Make Y behave like expected
+nnoremap Y y$
+
+" Center search result when jumping around
+nnoremap n nzzzv
+nnoremap N Nzzzv
+function! CenterSearch()
+  let cmdtype = getcmdtype()
+  if cmdtype == '/' || cmdtype == '?'
+    return "\<enter>zz"
+  endif
+  return "\<enter>"
+endfunction
+cnoremap <silent> <expr> <enter> CenterSearch()
+
+" Make joining lines behave
+nnoremap J mzJ`z
+
 " NerdTree mappings
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>m :NERDTreeFind<cr>
@@ -27,6 +45,7 @@ vnoremap <silent> <leader>/ :Commentary<cr>
 
 " Easier saving, quitting, reloading and resourcing
 nnoremap <silent> <leader>s :update<cr>
+nnoremap <silent> <leader>gs :noa update<cr>
 nnoremap <silent> <leader>w :bd<cr>
 nnoremap <silent> <leader>q :q<cr>
 " Scroll up 10 lines when going to bottom of file
@@ -36,8 +55,8 @@ nnoremap <silent> <leader>rv :source $MYVIMRC<cr>
 
 " Move between buffers
 " nnoremap <S-l> :bn<cr>
-nnoremap <silent> <S-h> :<C-u>exe 'bp' . v:count1<cr>
-nnoremap <silent> <S-l> :<C-u>exe 'bn' . v:count1<cr>
+nnoremap <silent> H :<C-u>exe 'bp' . v:count1<cr>
+nnoremap <silent> L :<C-u>exe 'bn' . v:count1<cr>
 
 " quickfix list movement
 nnoremap <C-l> :cnext<cr>
@@ -55,6 +74,27 @@ vmap <expr> <C-h> DVB_Drag('left')
 vmap <expr> <C-j> DVB_Drag('down')
 vmap <expr> <C-k> DVB_Drag('up')
 vmap <expr> <C-l> DVB_Drag('right')
+
+vnoremap <silent> J :<C-u>exe "m '>+" . v:count1<cr>gv=gv
+vnoremap <silent> K :<C-u>exe "m '>-" . (v:count1 + 1)<cr>gv=gv
+vnoremap L >gv
+vnoremap H <gv
+vnoremap > >gv
+vnoremap < <gv
+
+nnoremap <esc><esc> :noh<cr>
+
+" Surround selection with quote/brackets
+vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
+vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
+vnoremap <leader>) <esc>`>a)<esc>`<i(<esc>
+vnoremap <leader>[ <esc>`>a]<esc>`<i[<esc>
+vnoremap <leader>] <esc>`>a]<esc>`<i[<esc>
+vnoremap <leader>{ <esc>`>a}<esc>`<i{<esc>
+vnoremap <leader>} <esc>`>a}<esc>`<i{<esc>
+vnoremap <leader>< <esc>`>a><esc>`<i<<esc>
+vnoremap <leader>< <esc>`>a><esc>`<i<<esc>
 
 " Duplicate line
 " nnoremap <silent> <leader>d :@=':copy . <BAR> exe "+normal " . col . "l" <BAR>' <BAR> let col=virtcol('.') <cr>
