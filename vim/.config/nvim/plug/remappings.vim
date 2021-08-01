@@ -59,14 +59,14 @@ nnoremap <silent> H :<C-u>exe 'bp' . v:count1<cr>
 nnoremap <silent> L :<C-u>exe 'bn' . v:count1<cr>
 
 " quickfix list movement
-nnoremap <C-l> :cnext<cr>
-nnoremap <C-h> :cprevious<cr>
+nnoremap <C-l> :cnext<cr>zz
+nnoremap <C-h> :cprevious<cr>zz
 
 " nnoremap G Gzb10<C-E>
 
 " Move line up/down
-nnoremap <silent> <c-k> :<C-u>exe 'm -' . (v:count1 + 1)<cr>
-nnoremap <silent> <C-j> :<C-u>exe 'm +' . v:count1<cr>
+nnoremap <silent> <c-k> :<C-u>exe 'm -' . (v:count1 + 1)<cr>==
+nnoremap <silent> <C-j> :<C-u>exe 'm +' . v:count1<cr>==
 " nnoremap <silent> <C-j> :<C-U>exe 'm +' . v:count1<cr>
 
 " Move visual selection
