@@ -74,9 +74,8 @@ vmap <expr> <C-h> DVB_Drag('left')
 vmap <expr> <C-j> DVB_Drag('down')
 vmap <expr> <C-k> DVB_Drag('up')
 vmap <expr> <C-l> DVB_Drag('right')
-
-vnoremap <silent> J :<C-u>exe "m '>+" . v:count1<cr>gv=gv
-vnoremap <silent> K :<C-u>exe "m '>-" . (v:count1 + 1)<cr>gv=gv
+vnoremap <silent> J :<C-u>exe "'<,'>m '>+" . v:count1<cr>gv=gv
+vnoremap <silent> K :<C-u>exe "'<,'>m '<-" . (v:count1 + 1)<cr>gv=gv
 vnoremap L >gv
 vnoremap H <gv
 vnoremap > >gv
@@ -87,6 +86,7 @@ nnoremap <esc><esc> :noh<cr>
 " Surround selection with quote/brackets
 vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
 vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+vnoremap <leader>` <esc>`>a`<esc>`<i`<esc>
 vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
 vnoremap <leader>) <esc>`>a)<esc>`<i(<esc>
 vnoremap <leader>[ <esc>`>a]<esc>`<i[<esc>
