@@ -39,7 +39,7 @@ set autoread
 set colorcolumn=81
 
 " Make macros lighting fast
-" set lazyredraw
+set lazyredraw
 
 let s:local_coc_path = "$HOME/Git/coc.nvim"
 let s:has_local_coc = isdirectory(expand(s:local_coc_path))
@@ -148,6 +148,8 @@ let g:vim_markdown_folding_disabled = 1
 set noshowmode
 " Always show tabline
 set showtabline=2
+" Force command height to 2 to prevent glitch with lightline
+set cmdheight=2
 let g:lightline#bufferline#clickable = 1
 let g:lightline = {
       \ 'colorscheme': 'deus',
@@ -263,3 +265,8 @@ augroup pandoc_syntax
     au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 augroup END
 hi Conceal guifg=orange guibg=None
+
+augroup filetypes
+    au! BufRead,BufNewFile *.porth set filetype=porth
+    au! FileType porth setlocal commentstring=//\ %s
+augroup END
