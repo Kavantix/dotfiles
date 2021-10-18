@@ -25,7 +25,8 @@
     "dart",
     "json",
     "jsonc",
-    "yaml"
+    "yaml",
+    "go"
   ],
   "python.formatting.provider": "yapf",
   "flutter.sdk.searchPaths": [
@@ -41,12 +42,13 @@
   "Lua.workspace.maxPreload": 10000,
   "Lua.workspace.preloadFileSize": 1000,
   "flutter.selectedDeviceId": "1D558E73-103B-4B1B-ACBC-D254F8AF5FC2",
-  "flutter.trace.server": "message",
+  /* "flutter.trace.server": "verbose", */
   /* "dart.showTodos": false */
   /* "flutter.outlineWidth": 60 */
   /* "flutter.useNerdFont": false */
   "dart.analysisExcludedFolders": [
     "/Users/pieter/.pub-cache",
     "/Users/pieter/fvm/versions/stable/"
-  ]
+  ],
+  "outline.expandLevel": 100,
 }
