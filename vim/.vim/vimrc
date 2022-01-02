@@ -103,7 +103,18 @@ if has('nvim')
   Plug 'navarasu/onedark.nvim'
   Plug 'sainnhe/gruvbox-material'
   Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
-  lua <<LUA
+endif
+
+" Better cursorhold event that doesnt write swap and works in nvim
+Plug 'antoinemadec/FixCursorHold.nvim'
+
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'voldikss/vim-floaterm'
+call plug#end()
+
+if has('nvim')
+lua <<LUA
   require'nvim-treesitter.configs'.setup {
     -- One of "all", "maintained" (parsers with maintainers), or a list of languages
     ensure_installed = "maintained",
@@ -130,14 +141,6 @@ if has('nvim')
   }
 LUA
 endif
-
-" Better cursorhold event that doesnt write swap and works in nvim
-Plug 'antoinemadec/FixCursorHold.nvim'
-
-Plug 'jiangmiao/auto-pairs'
-
-Plug 'voldikss/vim-floaterm'
-call plug#end()
 
 " in millisecond, used for both CursorHold and CursorHoldI
 let g:cursorhold_updatetime = 100
