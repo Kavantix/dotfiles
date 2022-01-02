@@ -1,11 +1,9 @@
 " Easy moving between windows
 " Disabled in favor of moving lines
 " noremap <C-H> <C-W>h
-tnoremap <C-H> <C-\><C-N><C-W>h
 " noremap <C-J> <C-W>j
 " noremap <C-K> <C-W>k
 " noremap <C-L> <C-W>l
-tnoremap <C-L> <C-\><C-N><C-W>l
 
 " Make Y behave like expected
 nnoremap Y y$
