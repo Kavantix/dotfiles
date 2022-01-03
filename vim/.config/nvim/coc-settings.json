@@ -52,4 +52,5 @@
   ],
   "outline.expandLevel": 100,
   "go.checkForUpdates": "ask",
+  "git.addGBlameToVirtualText": true,
 }
