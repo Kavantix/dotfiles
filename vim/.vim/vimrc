@@ -224,7 +224,9 @@ let g:lightline = {
 " colorscheme monokai
 let g:onedark_style='warmer'
 colorscheme gruvbox-baby
-hi ColorColumn guibg=#252525
+hi CocHighlightText guibg=#414141
+hi CocHighlightWrite guibg=#414141
+hi CocHighlightRead guibg=#414141
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
