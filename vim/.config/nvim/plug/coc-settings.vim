@@ -106,9 +106,6 @@ function! ShowSignature()
 endfunction
 " inoremap <silent> <expr> <C-,><C-p> ShowSignature()
 
-" set error/warning highlight colors
-set termguicolors
-
 " ---------------------------------------------------------------------
 
 

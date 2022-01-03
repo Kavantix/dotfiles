@@ -8,6 +8,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 syntax on
+set termguicolors
 set nocompatible
 set number
 set relativenumber
@@ -136,7 +137,7 @@ lua <<LUA
       -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
       -- Using this option may slow down your editor, and you may see some duplicate highlights.
       -- Instead of true it can also be a list of languages
-      additional_vim_regex_highlighting = false,
+      additional_vim_regex_highlighting = { "vim" },
     },
     indent = {
       enable = true
