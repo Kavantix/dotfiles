@@ -51,4 +51,5 @@
     "/Users/pieter/fvm/versions/stable/"
   ],
   "outline.expandLevel": 100,
+  "go.checkForUpdates": "ask",
 }
