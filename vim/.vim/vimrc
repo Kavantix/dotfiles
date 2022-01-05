@@ -92,6 +92,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 " Showing mapped leader commands
 Plug 'spinks/vim-leader-guide'
 Plug 'tomasiser/vim-code-dark'
+Plug 'ojroques/vim-oscyank'
 
 if has('nvim')
   " telescope requirements...
