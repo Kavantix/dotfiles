@@ -82,7 +82,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current line.
 " nmap <leader>. <Plug>(coc-codeaction)
-nmap <leader>. :CocAction<cr>
+nmap <leader>. <Plug>(coc-codeaction-cursor)
 nmap <leader>, :CocCommand<cr>
 " Apply AutoFix to problem on the current line.
 nmap <leader>gf  <Plug>(coc-fix-current)

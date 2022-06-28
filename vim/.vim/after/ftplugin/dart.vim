@@ -5,10 +5,10 @@ endfunction
 function! s:RunCodeAction(action)
   let g:nextCodeAction=a:action
   set operatorfunc=s:CodeActionFromSelected
-  normal g@iw
+  normal g@l
 endfunction
 
-nnoremap <buffer> <silent> <leader>fww :call <SID>RunCodeAction('Wrap with SizedBox')<cr>viw
+nnoremap <buffer> <silent> <leader>fww :call <SID>RunCodeAction('Wrap with widget...')<cr>hciw
 nnoremap <buffer> <silent> <leader>frw :call <SID>RunCodeAction('Remove this widget')<cr>
 nnoremap <buffer> <silent> <leader>fdw :call <SID>RunCodeAction('Delete this widget')<cr>
 nnoremap <buffer> <silent> <leader>fwr :call <SID>RunCodeAction('Wrap with Row')<cr>

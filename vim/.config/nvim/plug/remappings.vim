@@ -67,6 +67,12 @@ nnoremap <silent> <c-k> :<C-u>exe 'm -' . (v:count1 + 1)<cr>==
 nnoremap <silent> <C-j> :<C-u>exe 'm +' . v:count1<cr>==
 " nnoremap <silent> <C-j> :<C-U>exe 'm +' . v:count1<cr>
 
+" easy base64 encoding/decoding
+vnoremap <silent> <leader>46 c<c-r>=trim(system('base64 -d', @"))<cr><esc>
+vnoremap <silent> <leader>64 c<c-r>=trim(system('base64', @"))<cr><esc>
+nnoremap <silent> <leader>b46 ciW<c-r>=trim(system('base64 -d', @"))<cr><esc>
+nnoremap <silent> <leader>b64 ciW<c-r>=trim(system('base64', @"))<cr><esc>
+
 " Move visual selection
 vmap <expr> <C-h> DVB_Drag('left')
 vmap <expr> <C-j> DVB_Drag('down')
