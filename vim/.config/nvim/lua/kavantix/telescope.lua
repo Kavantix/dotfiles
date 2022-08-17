@@ -113,8 +113,10 @@ vim.keymap.set('n', '<leader>rg', M.grep_string, { silent = true, desc = 'Find b
 vim.keymap.set('n', '<leader>rl', builtin.live_grep, { silent = true, desc = 'Find by live grep' })
 vim.keymap.set('n', '<leader>ft', builtin.builtin, { silent = true, desc = 'Find telescope builtin' })
 vim.keymap.set('n', '<leader>fc', builtin.commands, { silent = true, desc = 'Find command' })
-vim.keymap.set('n', '<leader>ff', builtin.current_buffer_fuzzy_find, { silent = true, desc = 'Find in file' })
+vim.keymap.set('n', '<leader>f/', builtin.current_buffer_fuzzy_find, { silent = true, desc = 'Find in file' })
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, { silent = true, desc = 'Find keymap' })
+vim.keymap.set('n', '<leader>ff', builtin.resume, { silent = true, desc = 'Resume last telescope search' })
+vim.keymap.set('n', '<leader>fo', builtin.buffers, { silent = true, desc = 'Find open buffer' })
 
 return M
 
