@@ -62,8 +62,6 @@ if !s:has_local_coc
   Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 endif
 Plug 'neoclide/jsonc.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
@@ -201,12 +199,6 @@ hi CocHighlightText guibg=#414141
 hi CocHighlightWrite guibg=#414141
 hi CocHighlightRead guibg=#414141
 hi Visual guibg=#414141
-
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-let $FZF_DEFAULT_OPTS='--reverse'
-let g:fzf_default_command='fd --type f -H --exclude .git --exclude "*.png" --exclude "*.ttf"'
-let $FZF_DEFAULT_COMMAND=g:fzf_default_command
-
 
 " Enable mouse support
 set mouse=a

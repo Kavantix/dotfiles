@@ -1,4 +1,6 @@
-local actions = require('telescope.actions')
+local actions = require 'telescope.actions'
+local builtin = require 'telescope.builtin'
+
 require('telescope').setup {
    defaults = {
       file_sorter = require('telescope.sorters').get_fzy_sorter,
@@ -36,10 +38,11 @@ require('telescope').setup {
 require('telescope').load_extension('fzy_native')
 
 local M = {}
-M.search_dotfiles = function()
-   require("telescope.builtin").find_files({
+function M.search_dotfiles()
+   builtin.find_files({
       prompt_title = "< dotfiles >",
       cwd = "$HOME/git/dotfiles/",
+      hidden = true,
    })
 end
 
@@ -59,8 +62,8 @@ end
 --   :h telescope.layout ->
 --   :h telescope.actions
 --
-M.git_branches = function() 
-   require("telescope.builtin").git_branches({
+function M.git_branches() 
+   builtin.git_branches({
       attach_mappings = function(prompt_bufnr, map) 
          map('i', '<c-d>', actions.git_delete_branch)
          map('n', '<c-d>', actions.git_delete_branch)
@@ -69,15 +72,22 @@ M.git_branches = function()
    })
 end
 
-M.find_files = function()
-   require('telescope.builtin').find_files({
+function M.find_files()
+   builtin.find_files({
       hidden = true,
       find_command = {'fd', '--type', 'f', '-H', '--exclude', '.git', '--exclude', '*.png', '--exclude', '*.ttf'},
    })
 end
 
-M.find_files_dart = function ()
-   require('telescope.builtin').find_files({
+function M.find_files_all()
+   builtin.find_files({
+      hidden = true,
+      find_command = {'fd', '--type', 'f', '-H', '--no-ignore', '--exclude', '.git', '--exclude', '*.png', '--exclude', '*.ttf'},
+   })
+end
+
+function M.find_files_dart()
+   builtin.find_files({
       hidden = true,
       find_command = {
          'fd', '--type', 'f', '-H', '--exclude', '.git', '--exclude', '*.png', '--exclude', '*.ttf',
@@ -90,5 +100,21 @@ M.find_files_dart = function ()
    })
 end
 
+function M.grep_string()
+   builtin.grep_string({
+      search = vim.fn.input("Grep For > "),
+   })
+end
+
+vim.keymap.set('n', '<leader>o', M.find_files, { silent = true, desc = 'Find file' })
+vim.keymap.set('n', '<leader>O', M.find_files_all, { silent = true, desc = 'Find file even ignored' })
+vim.keymap.set('n', '<leader>fd', M.search_dotfiles, { silent = true, desc = 'Find in dotfiles' })
+vim.keymap.set('n', '<leader>rg', M.grep_string, { silent = true, desc = 'Find by string grep' })
+vim.keymap.set('n', '<leader>rl', builtin.live_grep, { silent = true, desc = 'Find by live grep' })
+vim.keymap.set('n', '<leader>ft', builtin.builtin, { silent = true, desc = 'Find telescope builtin' })
+vim.keymap.set('n', '<leader>fc', builtin.commands, { silent = true, desc = 'Find command' })
+vim.keymap.set('n', '<leader>ff', builtin.current_buffer_fuzzy_find, { silent = true, desc = 'Find in file' })
+vim.keymap.set('n', '<leader>fk', builtin.keymaps, { silent = true, desc = 'Find keymap' })
 
 return M
+
