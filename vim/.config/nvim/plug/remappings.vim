@@ -35,14 +35,14 @@ nnoremap <silent> <leader>b46 ciW<c-r>=trim(system('base64 -d', @"))<cr><esc>
 nnoremap <silent> <leader>b64 ciW<c-r>=trim(system('base64', @"))<cr><esc>
 
 " Move visual selection
-vmap <expr> <C-h> DVB_Drag('left')
-vmap <expr> <C-j> DVB_Drag('down')
-vmap <expr> <C-k> DVB_Drag('up')
-vmap <expr> <C-l> DVB_Drag('right')
-vnoremap <silent> J :<C-u>exe "'<,'>m '>+" . v:count1<cr>gv=gv
-vnoremap <silent> K :<C-u>exe "'<,'>m '<-" . (v:count1 + 1)<cr>gv=gv
-vnoremap L >gv
-vnoremap H <gv
+vmap <expr> H DVB_Drag('left')
+vmap <expr> J DVB_Drag('down')
+vmap <expr> K DVB_Drag('up')
+vmap <expr> L DVB_Drag('right')
+vnoremap <silent> <c-j> :<C-u>exe "'<,'>m '>+" . v:count1<cr>gv=gv
+vnoremap <silent> <c-k> :<C-u>exe "'<,'>m '<-" . (v:count1 + 1)<cr>gv=gv
+vnoremap <c-l> >gv
+vnoremap <c-h> <gv
 vnoremap > >gv
 vnoremap < <gv
 
