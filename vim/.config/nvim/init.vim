@@ -280,3 +280,5 @@ augroup filetypes
     au! BufRead,BufNewFile *.ccon set filetype=ccon
     au! FileType ccon setlocal commentstring=#\ %s
 augroup END
+
+lua require 'kavantix'
