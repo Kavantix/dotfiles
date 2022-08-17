@@ -36,6 +36,16 @@
   /* "flutter.provider.enableSnippet": false, */
   "Lua.workspace.maxPreload": 10000,
   "Lua.workspace.preloadFileSize": 1000,
+  "Lua.diagnostics.globals": ["vim"],
+  "Lua.workspace.library": {
+    "/opt/homebrew/share/nvim/runtime/lua": true,
+    "/opt/homebrew/share/nvim/runtime/lua/vim": true,
+    "/opt/homebrew/share/nvim/runtime/lua/vim/lsp": true
+    // "/opt/homebrew/Cellar/neovim/HEAD-ba5be65/share/nvim/runtime/lua/vim/_editor.lua": true
+    // "/opt/homebrew/Cellar/neovim/HEAD-ba5be65/share/nvim/runtime/lua": true
+    // "/Users/pieter/Library/Caches/Homebrew/neovim--git/build/include/lua": true,
+    // "/Users/pieter/Library/Caches/Homebrew/neovim--git/src/nvim/lua": true
+  },
   "flutter.selectedDeviceId": "1D558E73-103B-4B1B-ACBC-D254F8AF5FC2",
   /* "flutter.trace.server": "verbose", */
   /* "dart.showTodos": false */

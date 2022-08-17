@@ -105,6 +105,7 @@ if has('nvim')
   " Colorizer
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/playground'
   Plug 'navarasu/onedark.nvim'
   Plug 'sainnhe/gruvbox-material'
   Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
@@ -150,6 +151,8 @@ lua <<LUA
       enable = true
     },
   }
+    --local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+    --parser_config.dart.install_info.url =  "~/git/personal/tree-sitter-dart"
 
   require('gitsigns').setup {
     signs = {
@@ -301,6 +304,7 @@ colorscheme gruvbox-baby
 hi CocHighlightText guibg=#414141
 hi CocHighlightWrite guibg=#414141
 hi CocHighlightRead guibg=#414141
+hi Visual guibg=#414141
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
